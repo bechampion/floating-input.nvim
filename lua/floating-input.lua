@@ -22,7 +22,7 @@ function M.input(opts, on_confirm, win_config)
 	on_confirm = on_confirm or function() end
 
 	-- Calculate a minimal width with a bit buffer
-	local default_width = vim.str_utfindex(default) + 10
+	local default_width = vim.str_utfindex(default) + 70
 	local prompt_width = vim.str_utfindex(prompt) + 10
 	local input_width = default_width > prompt_width and default_width or prompt_width
 
@@ -31,7 +31,7 @@ function M.input(opts, on_confirm, win_config)
 		style = "minimal",
 		border = "rounded",
 		width = input_width,
-		height = 1,
+		height = 3,
 		title = prompt,
 	}
 
