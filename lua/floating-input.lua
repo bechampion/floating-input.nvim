@@ -30,8 +30,8 @@ function M.input(opts, on_confirm, win_config)
 		focusable = true,
 		style = "minimal",
 		border = "rounded",
-		width = input_width,
-		height = 3,
+		width = 100,
+		height = 2,
 		title = prompt,
 	}
 
@@ -47,6 +47,7 @@ function M.input(opts, on_confirm, win_config)
 
 	-- Create floating window.
 	local buffer = vim.api.nvim_create_buf(false, true)
+	vim.bo[buffer].filetype = "floating"
 	local window = vim.api.nvim_open_win(buffer, true, win_config)
 	vim.api.nvim_buf_set_text(buffer, 0, 0, 0, 0, { default })
 
